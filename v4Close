@@ -131,8 +131,8 @@ task rc_auto_loop_task_Controller1(rc_auto_loop_function_Controller1);
 
 // Allows for easier use of the VEX Library
 using namespace vex;
-void Fintake(){
- intake.spin(forward);
+void FIntake(){
+ Intake.spin(forward);
 }
 void spinPewPew(){
  kicker.spin(forward);
@@ -156,11 +156,11 @@ void Dlwing(){
 void Dfwing(){
  frontwing.set(false);
 }
-void Rintake(){
- intake.spin(reverse);
+void RIntake(){
+ Intake.spin(reverse);
 }
 void Stopin(){
- intake.stop();
+ Intake.stop();
 }
 void StopPewPew(){
  kicker.stop();
@@ -211,7 +211,7 @@ competition Competition;
 
 
 int main() {
- intake.setVelocity(100, percent);
+ Intake.setVelocity(100, percent);
  kicker.setVelocity(100, percent);
  kicker2.setVelocity(100, percent);
  Drivetrain.setDriveVelocity(70, percent);
@@ -220,9 +220,9 @@ int main() {
  Competition.autonomous(Autoclose);
  Controller1.ButtonY.pressed(LiftExtend);
  Controller1.ButtonX.pressed(LiftRetract);
- Controller1.ButtonR2.pressed(Rintake);
+ Controller1.ButtonR2.pressed(RIntake);
  Controller1.ButtonR2.released(Stopin);
- Controller1.ButtonL2.pressed(Fintake);
+ Controller1.ButtonL2.pressed(FIntake);
  Controller1.ButtonL2.released(Stopin);
  Controller1.ButtonA.pressed(spinPewPew);
  Controller1.ButtonA.released(StopPewPew);
